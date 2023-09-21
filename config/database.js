@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const dbConnect = () => {
-    mongoose.connect('mongodb://127.0.0.1/students_todo', {
+    mongoose.connect('mongodb://127.0.0.1/Blog_db', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

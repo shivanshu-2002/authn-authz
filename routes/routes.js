@@ -1,15 +1,15 @@
-const express = require("express");
+const express = require('express');
 
 const router = express.Router();
-const {createTodo }= require('../controller/createTodo');
-const {getTodos , getTodo} = require('../controller/getTodos');
-const {updateTodos} = require('../controller/updateTodos');
-const {deleteTodos} = require('../controller/deleteTodos');
-
-router.post('/createTodo',createTodo); //create
-router.get('/getTodos',getTodos); //read
-router.get('/getTodo/:id',getTodo); //read one todo
-router.put('/updateTodo/:id',updateTodos); //update
-router.delete('/deleteTodo/:id',deleteTodos); //delete
+// import Controller ..
+const {createPost,getPost} = require('../controller/postController');
+const {createComment} = require('../controller/commentController');
+const {createLike,createUnlike} = require('../controller/likeController');
+// Map the paths with controller...
+router.post("/posts/create",createPost);
+router.get("/posts",getPost);
+router.post("/comments/create",createComment);
+router.post("/likes/like",createLike);
+router.post("/likes/unlike",createUnlike);
 
 module.exports = router;
